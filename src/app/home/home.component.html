@@ -15,8 +15,12 @@
             <a routerLink="/orders" class="nav-link">Orders</a>
           </li>
           <li class="nav-item">
-            <a  class="nav-link pointer">Logout</a>
+            <a (click)="onLogout()" class="nav-link pointer">Logout</a>
           </li>
         </ul>
     </div>
   </nav>
+
+  <div class="container">
+      <router-outlet></router-outlet>
+  </div>

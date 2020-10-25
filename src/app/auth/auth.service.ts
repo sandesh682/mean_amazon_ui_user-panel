@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot, UrlTree } from '@angular/router';
-import { Observable } from 'rxjs';
 import {HttpClient} from '@angular/common/http'
 
 @Injectable({
@@ -30,7 +29,7 @@ export class AuthService implements CanActivate{
       return true
     }
     
-    this.router.navigate(['/login'])
+    this.router.navigate(['/auth/login'])
 
     return false
   }
