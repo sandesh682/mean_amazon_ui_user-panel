@@ -9,6 +9,8 @@ import { GallaryComponent } from './gallary/gallary.component';
 import { SearchComponent } from './search/search.component';
 import { FilterComponent } from './filter/filter.component';
 import { CartComponent } from './cart/cart.component';
+import { NgbModal, NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -20,7 +22,9 @@ import { CartComponent } from './cart/cart.component';
   imports: [
     CommonModule,
     ProductRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    NgbModule,
+    FormsModule
   ],
   providers:[
     ProductService,

@@ -1,15 +1,35 @@
-<h2>Products List..!</h2>
 <div class="row">
-    <div class="col-md-4" *ngFor="let product of products">
-         <div class="card p-4">
-            <img src="http://localhost:4000/product/image/{{product['image']}}" alt="" class="card-img-top">
-            <div class="card-body">
-                    <h5 class="card-title">{{product.title}}</h5>
-                    <p class="card-text">{{product.description}}</p>
-                    <p class="card-text"><strong>Price:</strong>{{product.price}}</p>
-                    <p class="card-text"><strong>Category:</strong>{{product.category.title}}</p>
+    <div class="col-md-9">
+        <h2>Products List..!</h2>
+    </div>
+    <div class="col-md-3">
+        <button (click) = "loadCart()" class="btn btn-success float-right">Cart</button>
+    </div>    
+</div>
+
+<div class="row">
+    <div class="col-md-3">
+       <div class="form-group mt-4">
+           <label for="filter">Category</label>
+           <select class="form-control" [(ngModel)] = "category" (change)="filterProducts()">
+            <option [value]="category['id']" *ngFor="let category of categories">{{category.title}}</option>
+           </select>
+       </div>
+    </div>
+    <div class="col-md-9">
+        <div class="row">
+            <div class="col-md-4" *ngFor="let product of products">
+                 <div class="card p-4">
+                    <img src="http://localhost:4000/product/image/{{product['image']}}" alt="" class="card-img-top">
+                    <div class="card-body">
+                            <h5 class="card-title">{{product.title}}</h5>
+                            <p class="card-text">{{product.description}}</p>
+                            <p class="card-text"><strong>Price:</strong>{{product.price}}</p>
+                            <p class="card-text"><strong>Category:</strong>{{product.category.title}}</p>
+                    </div>
+                    <button (click)="addToCart(product)" class="btn btn-success mt-3">Add to Cart</button>
+                </div>
             </div>
-            <button (click)="addToCart(product)" class="btn btn-success mt-3">Add to Cart</button>
         </div>
     </div>
-</div>
+</div> 
